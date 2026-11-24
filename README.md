@@ -58,6 +58,19 @@ Il notebook PySpark (`NB_Meteo`) gestisce l'intero ciclo di estrazione, trasform
 2. **Pagina 2 — Dettaglio Geografico**
    * **Filtro Temporale**: selettore orizzontale a riquadri per filtrare l'analisi per singolo mese (`1–12`).
    * **Matrice Gerarchica (`Continente > Paese > Città`)**: esplorazione drill-down delle metriche climatiche con formattazione condizionale su `Delta vs Media Continente (°C)` per evidenziare immediatamente le anomalie termiche positive (rosso) e negative (blu).
+  
+1. **Pagina 1 — Panoramica Globale**
+   - **Andamento Mensile**: grafico a linee con la curva termica media sui 12 mesi per ciascuna capitale.
+   - **KPI Summary**: 5 schede riepilogative con valori medi e picchi annuali (Temperatura Ultima Ora, Escursione Termica, Temperatura Media, Vento Medio, Umidità Media).
+   - **Ranking Città**: grafico a barre orizzontali ordinato per temperatura media annua.
+
+   ![Panoramica Globale](pagina1_panoramica.png)
+
+2. **Pagina 2 — Dettaglio Geografico**
+   - **Filtro Temporale**: selettore orizzontale a riquadri per filtrare l'analisi per singolo mese (`1–12`).
+   - **Matrice Gerarchica (`Continente > Paese > Città`)**: esplorazione drill-down delle metriche climatiche con formattazione condizionale su `Delta vs Media Continente (°C)` per evidenziare immediatamente le anomalie termiche positive (rosso) e negative (blu).
+
+   ![Dettaglio Geografico](pagina2_dettaglio.png)
 
 ---
 
