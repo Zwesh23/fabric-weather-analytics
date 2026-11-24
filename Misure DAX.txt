@@ -1,0 +1,39 @@
+Delta vs Media Continente (°C) = 
+IF(
+    ISBLANK([Temperatura Media (°C)]),
+    BLANK(),
+    [Temperatura Media (°C)] - [Temp Media Continente (°C)]
+)
+
+
+Escursione Termica (°C) = [Temperatura Max (°C)] - [Temperatura Min (°C)]
+
+Temp Media Continente (°C) = 
+IF(
+    ISBLANK([Temperatura Media (°C)]),
+    BLANK(),
+    CALCULATE(
+        [Temperatura Media (°C)],
+        REMOVEFILTERS(dim_countries),
+        REMOVEFILTERS(dim_city)
+    )
+)
+
+
+Temperatura Max (°C) = MAX(fact_weather_hourly[temperature])
+
+Temperatura Media (°C) = AVERAGE(fact_weather_hourly[temperature])
+
+Temperatura Min (°C) = MIN(fact_weather_hourly[temperature])
+
+Temperatura Ultima Ora (°C) = 
+VAR MaxTS = MAX(fact_weather_hourly[timestamp_id])
+RETURN
+CALCULATE(
+    [Temperatura Media (°C)],
+    dim_time[timestamp_id] = MaxTS
+)
+
+Umidità Media (%) = AVERAGE(fact_weather_hourly[humidity])
+
+Vento Medio (km/h) = AVERAGE(fact_weather_hourly[wind_speed])
